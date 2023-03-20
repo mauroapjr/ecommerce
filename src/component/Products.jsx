@@ -31,10 +31,35 @@ export default function Products() {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons">
-          <button className="btn btn-outline-dark">All</button>
-          <button className="btn btn-outline-dark">Men's Clothing</button>
+        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+          <button className="btn btn-outline-dark me-2">All</button>
+          <button className="btn btn-outline-dark me-2">Men's Clothing</button>
+          <button className="btn btn-outline-dark me-2">
+            Women's Clothing
+          </button>
+          <button className="btn btn-outline-dark me-2">Jewerly</button>
+          <button className="btn btn-outline-dark me-2">Electronics</button>
         </div>
+        {filter.map((product) => {
+          return (
+            <>
+              <div className="col-md-3"></div>
+              <div class="card">
+                <img src={product.image} class="card-img-top" alt={product.title} />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">
+                    Go somewhere
+                  </a>
+                </div>
+              </div>
+            </>
+          );
+        })}
       </>
     );
   };
