@@ -6,9 +6,9 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-4" href="/">
+          <Link to="/"className="navbar-brand fw-bold fs-4" href="/">
             Store Name
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
