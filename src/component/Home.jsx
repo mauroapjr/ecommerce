@@ -1,21 +1,26 @@
 import React from "react";
+import Products from "./Products";
 
 export default function Home() {
   return (
     <div className="hero">
-      <div class="card text-bg-dark border-0">
-        <img src="..\assets\sunglasses_ background.jpg" class="card-img" alt="Background" />
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <p class="card-text">
-            <small>Last updated 3 mins ago</small>
-          </p>
+      <div className="card text-bg-dark border-0">
+        <img
+          src="..\assets\sunglasses_ background.jpg"
+          className="card-img"
+          alt="Background"
+          height="800px"
+        />
+        <div className="card-img-overlay">
+          <div className="container">
+            <h5 className="card-title display-3 fw-bolder mb-0">New Season</h5>
+            <p className="card-text lead fs-2">
+              Check out all the trends
+            </p>
+          </div>
         </div>
       </div>
+      <Products/>
     </div>
   );
 }
