@@ -23,31 +23,24 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                
                 <Link to="/" className="nav-link active" aria-current="page">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/products">
-                  Products
-                </a>
+                <a className="nav-link" href="/products">Products</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">
-                  About
-                </a>
+                <a className="nav-link" href="/about">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
-                  Contact
-                </a>
+                <a className="nav-link" href="/contact">Contact</a>
               </li>
             </ul>
             <div className="buttons">
-              <a href="" className="btn btn-outline-dark">
+              <a href="/login" className="btn btn-outline-dark">
               <i className="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-              <a href="" className="btn btn-outline-dark ms-2">
+              <a href="/signup" className="btn btn-outline-dark ms-2">
               <i className="fa fa-user-plus" aria-hidden="true"></i> Sign up</a>
-              <a href="" className="btn btn-outline-dark ms-2">
+              <a href="/my_cart" className="btn btn-outline-dark ms-2">
               <i className="fa fa-shopping-cart" aria-hidden="true"></i> My cart (0)</a>
             </div>
           </div>
