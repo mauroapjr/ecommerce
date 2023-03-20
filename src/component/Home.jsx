@@ -3,7 +3,7 @@ import React from "react";
 export default function Home() {
   return (
     <div className="hero">
-      <div class="card text-bg-dark">
+      <div class="card text-bg-dark border-0">
         <img src="..\assets\sunglasses_ background.jpg" class="card-img" alt="Background" />
         <div class="card-img-overlay">
           <h5 class="card-title">Card title</h5>
