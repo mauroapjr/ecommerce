@@ -5,19 +5,22 @@ import Home from "./component/Home";
 import Products from "./component/Products";
 import About from "./component/About";
 import SharedLayout from "./component/SharedLayout";
+import { CartProvider } from "./CartContext";
 
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<Home />} />
-            <Route path="products" element={<Products />} />
-            <Route path="about" element={<About />} />
-          </Route>
-        </Routes>
+        <CartProvider>
+          <Routes>
+            <Route path="/" element={<SharedLayout />}>
+              <Route index element={<Home />} />
+              <Route path="products" element={<Products />} />
+              <Route path="about" element={<About />} />
+            </Route>
+          </Routes>
+        </CartProvider>
       </BrowserRouter>
     </>
   );
