@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 export default function Products() {
@@ -97,9 +98,9 @@ export default function Products() {
                       {product.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <a href="/" className="btn btn-outline-dark">
+                    <Link to="/products/" href={`/products/${product.id}`} className="btn btn-outline-dark">
                       Buy Now
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
