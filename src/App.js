@@ -6,7 +6,7 @@ import Products from "./component/Products";
 import Product from "./component/Product";
 import About from "./component/About";
 import SharedLayout from "./component/SharedLayout";
-
+import Signup from "./component/Signup";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="products/:id" element={<Product />} />
             <Route path="about" element={<About />} />
+            <Route path="signup" element={<Signup />} />
           </Route>
         </Routes>
       </BrowserRouter>
