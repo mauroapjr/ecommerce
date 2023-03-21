@@ -98,7 +98,7 @@ export default function Products() {
                       {product.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <Link to="/products/" href={`/products/${product.id}`} className="btn btn-outline-dark">
+                    <Link to={`/products/${product.id}`} className="btn btn-outline-dark">
                       Buy Now
                     </Link>
                   </div>

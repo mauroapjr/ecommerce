@@ -13,7 +13,7 @@ export default function Product() {
       try {
         setLoading(true);
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-        setProduct(await response.clone().json());
+        setProduct(await response.json());
         setLoading(false);
       } catch (error) {
         console.error(error);
