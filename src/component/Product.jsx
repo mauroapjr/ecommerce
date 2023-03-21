@@ -20,7 +20,7 @@ export default function Product() {
       }
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return (
