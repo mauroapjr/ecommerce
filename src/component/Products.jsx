@@ -15,7 +15,6 @@ export default function Products() {
         setData(await response.clone().json());
         setFilter(await response.json());
         setLoading(false);
-        //console.log(filter);
       } catch (error) {
         console.error(error);
       }
