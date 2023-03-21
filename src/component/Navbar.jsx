@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import { useState } from "react";
 
 export default function Navbar() {
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
@@ -40,9 +47,24 @@ export default function Navbar() {
               <i className="fa fa-sign-in" aria-hidden="true"></i> Login</a>
               <a href="/signup" className="btn btn-outline-dark ms-2">
               <i className="fa fa-user-plus" aria-hidden="true"></i> Sign up</a>
-              <a href="/my_cart" className="btn btn-outline-dark ms-2">
-              <i className="fa fa-shopping-cart" aria-hidden="true"></i> My cart (0)</a>
+                <button 
+                className="fa fa-shopping-cart btn btn-outline-dark ms-2" 
+                aria-hidden="true" 
+                onClick={handleShow}>
+                  My Cart (0) Items
+                </button>
             </div>
+
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>
+                  My Cart
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <h1>items bought </h1>
+              </Modal.Body>
+            </Modal>
           </div>
         </div>
       </nav>
