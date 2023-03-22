@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/ditto.js
+yarn.lock
+src/VirtualTryOn.js
+src/catalogue.js
+src/App.js
+
