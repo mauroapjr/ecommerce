@@ -7,6 +7,7 @@ import Product from "./component/Product";
 import About from "./component/About";
 import SharedLayout from "./component/SharedLayout";
 import Signup from "./component/Signup";
+import Login from "./component/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="products/:id" element={<Product />} />
             <Route path="about" element={<About />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="login" element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>
