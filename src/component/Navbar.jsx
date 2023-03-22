@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
-import { useState } from "react";
+import { Button, useState, useContext } from "react";
+import { CartContext } from "../CartContext";
+import CartProduct from "./CartProduct";
 
 export default function Navbar() {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const cart = useContext(CartContext);
+  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0) 
 
   return (
     <div>
@@ -42,6 +46,7 @@ export default function Navbar() {
                 <a className="nav-link" href="/contact">Contact</a>
               </li>
             </ul>
+            <CartProduct show={show} handleClose={handleClose} />
             <div className="buttons">
               <a href="/login" className="btn btn-outline-dark">
               <i className="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -51,20 +56,11 @@ export default function Navbar() {
                 className="fa fa-shopping-cart btn btn-outline-dark ms-2" 
                 aria-hidden="true" 
                 onClick={handleShow}>
-                  My Cart (0) Items
+                  My Cart ({productsCount}) Items
                 </button>
             </div>
 
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>
-                  My Cart
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <h1>items bought </h1>
-              </Modal.Body>
-            </Modal>
+            
           </div>
         </div>
       </nav>

@@ -1,18 +1,28 @@
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
+import { CartContext, setProductData } from "../CartContext";
+import { useContext } from "react";
 
 export default function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
 
+  const cart = useContext(CartContext);
+  console.log(cart.items);
+
   useEffect(() => {
     const getProducts = async () => {
       try {
         setLoading(true);
         const response = await fetch("https://fakestoreapi.com/products");
-        setData(await response.clone().json());
-        setFilter(await response.json());
+        const products = await response.json();
+        
+        setData(products);
+        //store data in cart 
+        cart.setProductData(products)
+        
+        setFilter(products);
         setLoading(false);
         //console.log(filter);
       } catch (error) {
@@ -82,6 +92,9 @@ export default function Products() {
           </button>
         </div>
         {filter.map((product) => {
+          const productQuantity = cart.getProductQuantity(product);
+
+
           return (
             <>
               <div className="col-md-3 mb-4">
@@ -97,9 +110,11 @@ export default function Products() {
                       {product.title.substring(0, 12)}...
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <a href="/" className="btn btn-outline-dark">
-                      Buy Now
-                    </a>
+                      <button 
+                        className="btn btn-outline-dark" 
+                        onClick={() => cart.addToCart(product.id)}>
+                        Buy Now
+                      </button>
                   </div>
                 </div>
               </div>

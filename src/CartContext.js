@@ -1,18 +1,22 @@
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
-
   items: [],
+  products: [],
   getProductQuantity: () => {},
   addToCart: () => {},
   removeFromCart: () => {},
   deleteFromCart: () => {},
   getTotalCost: () => {}
-
 })
 
 export function CartProvider({children}){
-  const [cartProduct, setCartProduct] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  function setProductData(data) {
+    setProducts(data);
+  }
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(product => product.id === id)?.quantity
@@ -27,18 +31,16 @@ export function CartProvider({children}){
   function addToCart(id) {
     const quantity = getProductQuantity(id);
 
-    //product not in cart
     if (quantity === 0){
-      [
-        ...setCartProduct,
+      setCartProducts([
+        ...cartProducts,
         {
           id:id,
           quantity:1
         }
-      ]
+      ])
     } else {
-      //product in cart
-      setCartProduct(
+      setCartProducts(
         cartProducts.map(
           product => product.id === id ?
           {...product, quantity:product.quantity + 1} : product
@@ -50,10 +52,10 @@ export function CartProvider({children}){
   function removeFromCart(id) {
     const quantity = getProductQuantity(id)
 
-    if (quantity == 1){
+    if (quantity === 1){
       deleteFromCart(id);
     } else {
-      setCartProduct(
+      setCartProducts(
         cartProducts.map(
           product => product.id === id ?
           {...product, quantity:product.quantity - 1} : product
@@ -67,18 +69,25 @@ export function CartProvider({children}){
       cartProducts => 
       cartProducts.filter(
         currentProduct => {
-          return currentProduct.id != id;
+          return currentProduct.id !== id;
       })
     )
   }
 
+  //this function not finished yet
+  function getTotalCost() {
+    return
+  }
+
   const contextValue = {
-    items: cartProduct,
+    items: cartProducts,
+    products: products,
     getProductQuantity,
     addToCart,
     removeFromCart,
     deleteFromCart,
-    getTotalCost
+    getTotalCost,
+    setProductData
   }
 
   return (
