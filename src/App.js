@@ -8,6 +8,7 @@ import About from "./component/About";
 import SharedLayout from "./component/SharedLayout";
 import Signup from "./component/Signup";
 import Login from "./component/Login";
+import SharedCameraLayout from "./SharedCameraLayout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
+            <Route path="products/:id/tryon" element={<SharedCameraLayout />} />
           </Route>
         </Routes>
       </BrowserRouter>
