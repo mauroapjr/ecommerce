@@ -1,6 +1,3 @@
-library:
-yarn add react-loading-skeleton (load the products photo with the same size)
-
 
 # Getting Started with Create React App
 
