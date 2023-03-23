@@ -9,10 +9,11 @@ import SharedLayout from "./component/SharedLayout";
 import Signup from "./component/Signup";
 import Login from "./component/Login";
 import SharedCameraLayout from "./SharedCameraLayout";
+import { CartProvider } from "./CartContext";
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<SharedLayout />}>
@@ -26,7 +27,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </CartProvider>
   );
 }
 
