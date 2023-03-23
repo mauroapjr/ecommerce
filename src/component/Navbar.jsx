@@ -5,6 +5,10 @@ import { Button, useState, useContext } from "react";
 import { CartContext } from "../CartContext";
 import CartProduct from "./CartProduct";
 
+
+export default function Navbar(props) {
+  const { user } = props;
+
 export default function Navbar() {
 
   const [show, setShow] = useState(false);
@@ -12,6 +16,7 @@ export default function Navbar() {
   const handleShow = () => setShow(true);
   const cart = useContext(CartContext);
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0) 
+
 
   return (
     <div>
@@ -46,7 +51,11 @@ export default function Navbar() {
                 <a className="nav-link" href="/contact">Contact</a>
               </li>
             </ul>
+
+            <li>{ user }</li>
+
             <CartProduct show={show} handleClose={handleClose} />
+
             <div className="buttons">
               <a href="/login" className="btn btn-outline-dark">
               <i className="fa fa-sign-in" aria-hidden="true"></i> Login</a>
