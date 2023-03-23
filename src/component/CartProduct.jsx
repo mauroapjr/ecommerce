@@ -5,10 +5,11 @@ import { Modal } from "react-bootstrap";
 
 export default function CartProduct(props) {
   const cart = useContext(CartContext);
-  const id = props.id;
-  const quantity = props.quantity;
+  // const id = props.id;
+  // const quantity = props.quantity;
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0) 
 
+  let totalPrice = 0;
 
   return (
     <Modal show={props.show} onHide={props.handleClose}>
@@ -22,7 +23,7 @@ export default function CartProduct(props) {
             
             {cart.items.map((currentProduct) => {
               
-              
+              totalPrice += currentProduct.quantity * currentProduct.price;
               return (
                   <h1>
                   
@@ -30,21 +31,25 @@ export default function CartProduct(props) {
                     <div>Quantity:{currentProduct.quantity}</div>
                     <div>Price:{currentProduct.price}</div>
                     
+                    <Button sm="6" onClick={() => cart.addToCart(currentProduct.id)} className="mx-2">+</Button>
+                    <Button sm="6" onClick={() => cart.removeFromCart(currentProduct.id)} className="mx-2">-</Button>
+                    
+                    <Button size="sm" onClick={() => cart.deleteFromCart(currentProduct.id)}>
+                      Remove Item
+                    </Button>
                   </h1>
 
             )} )}
               
-              
-            
-            {/* <h3>{prop.title}</h3> */}
-            <p>{quantity} Total</p>
-            <Button size="sm" onClick={() => cart.deleteFromCart(id)}>
-              Remove Item
-            </Button>
-
-            {/* <Button variant="success">
+                  
+    
+                    
+            <p>Total:{totalPrice.toFixed(2)} </p>
+            <Button variant="success">
                       Purchase Item
-                    </Button> */}
+                    </Button>
+
+            
           </>
         ) : (
           <h1>Cart is Empty!</h1>
