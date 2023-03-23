@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const { user } = props;
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
@@ -35,6 +36,7 @@ export default function Navbar() {
                 <a className="nav-link" href="/contact">Contact</a>
               </li>
             </ul>
+            <li>{ user }</li>
             <div className="buttons">
               <a href="/login" className="btn btn-outline-dark">
               <i className="fa fa-sign-in" aria-hidden="true"></i> Login</a>
