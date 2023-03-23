@@ -39,8 +39,7 @@ app.post("/signup", (req, res) => {
     return res.status(400).send("User and password are required");
   }
   for (const values of Object.values(usersDatabase)) {
-    if (values.user.toLocaleLowerCase() === user.toLocaleLowerCase()
-    ) {
+    if (values.user.toLocaleLowerCase() === user.toLocaleLowerCase()) {
       res.status(400).send("User already exist!");
     }
   }
@@ -55,15 +54,9 @@ app.post("/signup", (req, res) => {
   console.log(`received user ${user} and password ${pwd}`);
   usersDatabase[id] = newUser;
   // req.session.id = id;
-  res.status(200).send({message: "User registered!", user});
-
-  
-  
-  
+  res.status(200).send({ message: "User registered!", user });
+  res.redirect("/products");
 });
-
-
-
 
 app.get("/signup", (req, res) => {
   res.send();
@@ -74,6 +67,10 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
+  res.send({});
+});
+
+app.post("/logout", (req, res) => {
   res.send({});
 });
 
