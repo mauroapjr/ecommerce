@@ -1,0 +1,12 @@
+.about_section {
+  background-color: rgb(243, 225, 195);
+}
+
+.about_section h1 {
+  font-size: 1.8em; 
+  padding-bottom: 2em ;
+}
+
+.about_section h3 {
+  font-size: 1.3em; 
+}

@@ -6,20 +6,22 @@ import { CartContext } from "../CartContext";
 import CartProduct from "./CartProduct";
 
 export default function Navbar() {
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const cart = useContext(CartContext);
-  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0) 
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
-        <Link to="/" className="navbar-brand">
-  <img src="../assets/store_logo.png" alt="" className="store_logo"/>
-</Link>
+          <Link to="/" className="navbar-brand">
+            <img src="../assets/store_logo.png" alt="" className="store_logo" />
+          </Link>
           {/* <Link to="/"className="navbar-brand fw-bold fs-4" href="/" src="ecommerce\public\assets\store_logo.png" >
             Store Name
           </Link> */}
@@ -37,30 +39,38 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">Home</Link>
+                <Link to="/" className="nav-link active" aria-current="page">
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/products">Products</a>
+                <a className="nav-link" href="/products">
+                  Products
+                </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">About</a>
+                <a className="nav-link" href="/about">
+                  About
+                </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">Contact</a>
+                <a className="nav-link" href="/contact">
+                  Contact
+                </a>
               </li>
             </ul>
             <CartProduct show={show} handleClose={handleClose} />
             <div className="buttons">
               <a href="/login" className="btn btn-outline-dark">
-              <i className="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                <i className="fa fa-sign-in" aria-hidden="true"></i> Login
+              </a>
               <a href="/signup" className="btn btn-outline-dark ms-2">
-              <i className="fa fa-user-plus" aria-hidden="true"></i> Sign up</a>
-              <button 
-                className="fa fa-shopping-cart btn btn-outline-dark ms-2" 
-                aria-hidden="true" 
-                onClick={handleShow}>
-                  My Cart ({productsCount}) Items
-                </button>
+                <i className="fa fa-user-plus" aria-hidden="true"></i> Sign up
+              </a>
+              <a onClick={handleShow} className="btn btn-outline-dark ms-2">
+                <i className="fa fa-shopping-cart" aria-hidden="true"></i> My
+                Cart ({productsCount}) Items
+              </a>
             </div>
           </div>
         </div>
