@@ -4,33 +4,34 @@ import '../Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="section footer-classic context-dark bg-image" style={{background: '#2d3246'}}>
+    
+    <footer className="section footer-classic context-dark bg-image py-5 shadow p-3 mb-5 bg-body rounded" width="100%" style={{background: '#FDF2E9 '}}>
       <div className="container">
         <div className="row row-30">
           
           <div className="col-md-4 col-xl-5">
             <div className="pr-xl-4">
               
-              <p>This website is used for managing, selling, buying products</p>
+              <p style={{fontSize: '0.8rem'}}>This website is used for managing, selling, buying products</p>
               <p className="rights">
-                <span>© 2023 </span>
-                <span>Created by Mauro, Samreen, Zhaopeng(Steve). </span>
-                <span> All Rights Reserved</span>
+                <span style={{fontSize: '0.8rem'}}>© 2023 </span>
+                <span style={{fontSize: '0.8rem'}}>Created by Mauro, Samreen, Zhaopeng(Steve). </span>
+                <span style={{fontSize: '0.8rem'}}> All Rights Reserved</span>
               </p>
             </div>
           </div>
           <div className="col-md-4">
             <h5>Contacts</h5>
             <dl className="contact-list">
-              <dt>Address:</dt>
-              <dd>CN Tower</dd>
+              <dd>Address:</dd>
+              <dd><span style={{fontSize: '0.8rem'}}>CN Tower</span></dd>
             </dl>
             <dl className="contact-list">
-              <dt>email:</dt>
-              <dd><a href="mailto:#">Toronto@gmail.com</a></dd>
+              <dd>Email:</dd>
+              <dd><a style={{fontSize: '0.8rem'}} href="mailto:#">toronto@gmail.com </a></dd>
             </dl>
             <dl className="contact-list">
-              <dt>phones:123456789</dt>
+              <dd><span style={{fontSize: '.9rem'}}>Phone:(123) 456-7789</span></dd>
               <dd>
                 <a href="tel:#"></a>
               </dd>
@@ -39,10 +40,10 @@ export default function Footer() {
           <div className="col-md-4 col-xl-3">
             <h5>Links</h5>
             <ul className="nav-list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contacts</a></li>
+              <li><a style={{fontSize: '0.8rem'}} href="#">Home</a></li>
+              <li><a style={{fontSize: '0.8rem'}} href="#">Products</a></li>
+              <li><a style={{fontSize: '0.8rem'}} href="#">About</a></li>
+              <li><a style={{fontSize: '0.8rem'}} href="#">Contacts</a></li>
             </ul>
           </div>
         </div>
