@@ -2,11 +2,33 @@ import Button from "react-bootstrap/Button";
 import { CartContext } from "../CartContext";
 import { useContext } from "react";
 import { Modal } from "react-bootstrap";
+import jsPDF from "jspdf"
+
+
 
 export default function CartProduct(props) {
   const cart = useContext(CartContext);
   // const id = props.id;
   // const quantity = props.quantity;
+
+
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    doc.text('Items Purchased:', 10, 10);
+    let y = 20;
+    cart.items.forEach((currentProduct) => {
+      doc.text(`Name: ${currentProduct.title}`, 10, y);
+      doc.text(`Quantity: ${currentProduct.quantity}`, 10, y + 10);
+      doc.text(`Price: ${currentProduct.price}`, 10, y + 20);
+      totalPrice += currentProduct.quantity * currentProduct.price;
+      y += 40;
+    });
+    doc.text(`Total: ${totalPrice.toFixed(2)}`, 10, y + 10);
+    const dataUri = doc.output('datauristring');
+    window.open(dataUri, '_blank');
+    cart.clearCart(); // clear cart after generating PDF
+  }
+
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0) 
 
   let totalPrice = 0;
@@ -25,6 +47,7 @@ export default function CartProduct(props) {
               
               totalPrice += currentProduct.quantity * currentProduct.price;
               return (
+                <div key={currentProduct.id}>
                   <h1>
                   
                     <div>Name:{currentProduct.title}</div>
@@ -38,6 +61,7 @@ export default function CartProduct(props) {
                       Remove Item
                     </Button>
                   </h1>
+                </div>
 
             )} )}
               
@@ -45,7 +69,7 @@ export default function CartProduct(props) {
     
                     
             <p>Total:{totalPrice.toFixed(2)} </p>
-            <Button variant="success">
+            <Button variant="success" onClick={generatePDF}>
                       Purchase Item
                     </Button>
 

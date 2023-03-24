@@ -7,6 +7,7 @@ export default function Footer() {
     <footer className="section footer-classic context-dark bg-image" style={{background: '#2d3246'}}>
       <div className="container">
         <div className="row row-30">
+          
           <div className="col-md-4 col-xl-5">
             <div className="pr-xl-4">
               
