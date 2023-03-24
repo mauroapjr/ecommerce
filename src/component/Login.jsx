@@ -5,11 +5,17 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+
 import React from "react";
-import axios from "axios";
+import "../Login.css" 
+
 
 function Login() {
+
+  const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+  const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+  const REGISTER_URL = "/products";
+
   const userRef = useRef();
   const errRef = useRef();
 
@@ -26,7 +32,33 @@ function Login() {
   const [matchFocus, setMatchFocus] = useState(false);
 
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
+  
+  useEffect(() => {
+    userRef.current.focus();
+  }, []);
+
+  useEffect(() => {
+    const result = USER_REGEX.test(user);
+    console.log("RESULT FROM USER", result);
+    console.log("USER", user);
+    setValidName(result);
+  }, [user]);
+
+  useEffect(() => {
+    const result = PWD_REGEX.test(pwd);
+    console.log("RESULT FROM PWD", result);
+    console.log("PWD", pwd);
+    setValidPwd(result);
+    const match = pwd === matchPwd;
+    setValidMatch(match);
+  }, [pwd, matchPwd]);
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [user, pwd, matchPwd]);
+
+  console.log("VALID NAME", validName);
+
 
   const handleSubmit = async (e) => {};
 
