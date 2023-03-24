@@ -90,7 +90,7 @@ export default function Products() {
         {filter.map((product,index) => {
 
           const productQuantity = cart.getProductQuantity(product);
-          console.log(productQuantity);
+          
 
           return (
             
