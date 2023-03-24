@@ -17,9 +17,12 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
-          <Link to="/"className="navbar-brand fw-bold fs-4" href="/">
+        <Link to="/" className="navbar-brand">
+  <img src="../assets/store_logo.png" alt="" className="store_logo"/>
+</Link>
+          {/* <Link to="/"className="navbar-brand fw-bold fs-4" href="/" src="ecommerce\public\assets\store_logo.png" >
             Store Name
-          </Link>
+          </Link> */}
           <button
             className="navbar-toggler"
             type="button"

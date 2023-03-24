@@ -80,3 +80,7 @@ button {
   left: -9999px;
 }
 
+.store_logo {
+  width: 100px;
+  height: auto;
+}
