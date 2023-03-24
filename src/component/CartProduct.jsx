@@ -57,6 +57,7 @@ export default function CartProduct(props) {
                       onClick={() => cart.addToCart(currentProduct.id)}
                       className="mx-2"
                       style={{ margin: '5px' }}
+                      variant="secondary"
                     >
                       +
                     </Button>
@@ -65,14 +66,16 @@ export default function CartProduct(props) {
                       onClick={() => cart.removeFromCart(currentProduct.id)}
                       className="mx-2"
                       style={{ margin: '5px' }}
+                      variant="secondary"
                     >
                       -
                     </Button>
 
                     <Button 
-                      size="sm"
+                      sm="6"
                       onClick={() => cart.deleteFromCart(currentProduct.id)}
                       style={{ margin: '5px' }}
+                      variant="secondary"
                     >
                       Remove Item
                     </Button>
