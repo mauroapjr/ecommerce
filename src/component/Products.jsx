@@ -111,7 +111,7 @@ export default function Products() {
                     More Details
                     </Link>
                       <button 
-                        className="btn btn-outline-dark" 
+                        className="btn btn-outline-dark " 
                         onClick={() => 
                           cart.addToCart(product.id)
                           }>
