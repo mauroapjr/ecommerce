@@ -76,7 +76,7 @@ export default function CartProduct(props) {
             
           </>
         ) : (
-          <h1>Cart is Empty!</h1>
+          <h7>Cart is Empty!</h7>
         )}
       </Modal.Body>
     </Modal>
