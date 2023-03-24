@@ -20,7 +20,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
           <Link to="/" className="navbar-brand">
-            <img src="..\assets\logo_crop.png" alt="" className="store_logo" style={{ width: "300px", height: "auto" }} />
+            <img src="..\assets\logo_crop.png" alt="" className="store_logo" style={{ width: "180px", height: "auto" }} />
           </Link>
           <button
             className="navbar-toggler"
