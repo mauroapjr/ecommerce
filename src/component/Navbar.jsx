@@ -20,11 +20,8 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
           <Link to="/" className="navbar-brand">
-            <img src="../assets/store_logo.png" alt="" className="store_logo" />
+            <img src="..\assets\logo_crop.png" alt="" className="store_logo" style={{ width: "300px", height: "auto" }} />
           </Link>
-          {/* <Link to="/"className="navbar-brand fw-bold fs-4" href="/" src="ecommerce\public\assets\store_logo.png" >
-            Store Name
-          </Link> */}
           <button
             className="navbar-toggler"
             type="button"
