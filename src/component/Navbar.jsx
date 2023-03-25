@@ -51,9 +51,7 @@ export default function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">
-                  Contact
-                </a>
+                <a className="nav-link" href="http://storage.googleapis.com/store-locator-ecommerce-project/index.html">Contact</a>
               </li>
             </ul>
             <CartProduct show={show} handleClose={handleClose} />

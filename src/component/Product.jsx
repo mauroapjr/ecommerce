@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
+import { CartContext } from "../CartContext";
+
 
 export default function Product() {
+  const cart = useContext(CartContext);
+
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -66,7 +70,14 @@ export default function Product() {
             $ {product.price}
           </h3>
           <p className="lead">{product.description}</p>
-          <Link to="/my_cart" className="btn btn-outline-dark px-4 py-2">Add to Cart</Link>
+          <button 
+                        className="btn btn-outline-dark" 
+                        onClick={() => 
+                          cart.addToCart(product.id)
+                          }>
+                        Add to Cart
+                      </button>
+          
           <Link to="/my_cart" className="btn btn-dark px-4 py-2 ms-2">My Cart</Link>
         </div>
         <div>
