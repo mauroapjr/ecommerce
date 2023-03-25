@@ -106,12 +106,12 @@ export default function Products() {
                     <h5 className="card-title mb-0">
                       {product.title.substring(0, 12)}...
                     </h5>
-                    <p className="card-text lead fw-bold">${product.price}</p>
-                    <Link to={`/products/${product.id}`} className="btn btn-outline-dark">
+                    <p className="card-text lead fw-bold ">${product.price}</p>
+                    <Link to={`/products/${product.id}`} className="btn btn-outline-dark " style={{ marginRight: "3px" }}>
                     More Details
                     </Link>
                       <button 
-                        className="btn btn-outline-dark " 
+                        className="btn btn-outline-dark mb-2" 
                         onClick={() => 
                           cart.addToCart(product.id)
                           }>
