@@ -87,41 +87,39 @@ export default function Products() {
             Electronics
           </button>
         </div>
-        {filter.map((product,index) => {
-
+        {filter.map((product, index) => {
           const productQuantity = cart.getProductQuantity(product);
-          
 
           return (
-            
-              <div key={index} className="col-md-3 mb-4">
-                <div className="card h-100 text-center p-4" key={product.id}>
-                  <img
-                    src={product.image}
-                    height="270px"
-                    className="card-img-top"
-                    alt={product.title}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title mb-0">
-                      {product.title.substring(0, 12)}...
-                    </h5>
-                    <p className="card-text lead fw-bold ">${product.price}</p>
-                    <Link to={`/products/${product.id}`} className="btn btn-outline-dark " style={{ marginRight: "3px" }}>
+            <div key={index} className="col-md-3 mb-4">
+              <div className="card h-100 text-center p-4" key={product.id}>
+                <img
+                  src={product.image}
+                  height="270px"
+                  className="card-img-top"
+                  alt={product.title}
+                />
+                <div className="card-body">
+                  <h5 className="card-title mb-0">
+                    {product.title.substring(0, 12)}...
+                  </h5>
+                  <p className="card-text lead fw-bold ">${product.price}</p>
+                  <Link
+                    to={`/products/${product.id}`}
+                    className="btn btn-outline-dark "
+                    style={{ marginRight: "1px" }}
+                  >
                     More Details
-                    </Link>
-                      <button 
-                        className="btn btn-outline-dark mb-2" 
-                        onClick={() => 
-                          cart.addToCart(product.id)
-                          }>
-                        Add to Cart
-                      </button>
-                      
-                  </div>
+                  </Link>
+                  <button
+                    className="btn btn-outline-dark mb-7"
+                    onClick={() => cart.addToCart(product.id)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
-            
+            </div>
           );
         })}
       </>
