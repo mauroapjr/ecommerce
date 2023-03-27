@@ -17,6 +17,7 @@ function UserProfile() {
           alt={user.name}
           style={{ borderRadius: "50%", width: "50px", height: "50px" }}
         />
+        <h6>{user.name.substring(0, 6)}</h6>
       </div>
     )
   );

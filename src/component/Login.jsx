@@ -6,16 +6,13 @@ function Login() {
 
   return (
     <div className="buttons">
-      {!loginWithRedirect && (
-        <a className="btn btn-outline-dark ms-2">
-          <i
-            className="fa fa-sign-in"
-            onClick={() => loginWithRedirect()}
-            aria-hidden="true"
-          ></i>{" "}
-          Login
-        </a>
-      )}
+      <button
+        className="btn btn-outline-dark ms-2"
+        onClick={() => loginWithRedirect()}
+      >
+        {" "}
+        Login
+      </button>
     </div>
   );
 }

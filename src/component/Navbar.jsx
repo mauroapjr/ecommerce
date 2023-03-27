@@ -76,7 +76,10 @@ export default function Navbar() {
               <Login />
               <Logout />
 
-              <a onClick={handleShow} className="btn btn-outline-dark ms-2 ms=auto">
+              <a
+                onClick={handleShow}
+                className="btn btn-outline-dark ms-2 ms=auto"
+              >
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> My
                 Cart ({productsCount}) Items
               </a>
