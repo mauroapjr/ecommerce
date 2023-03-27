@@ -3,9 +3,15 @@ import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { Button, useState, useContext } from "react";
 import { CartContext } from "../CartContext";
+import { useAuth0 } from "@auth0/auth0-react";
 import CartProduct from "./CartProduct";
+import Login from "./Login";
+import Logout from "./Logout";
+import UserProfile from "./UserProfile";
 
 export default function Navbar() {
+  const { user } = useAuth0();
+  console.log("USER",user)
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -55,13 +61,25 @@ export default function Navbar() {
               </li>
             </ul>
             <CartProduct show={show} handleClose={handleClose} />
+            <UserProfile />
+            <Login/>
+            <Logout/>
             <div className="buttons">
-              <a href="/login" className="btn btn-outline-dark">
+              <a  className="btn btn-outline-dark">
+                <i className="fa fa-sign-in" aria-hidden="true"></i> Login
+              </a>
+              <a  className="btn btn-outline-dark">
+                <i className="fa fa-sign-in" aria-hidden="true"></i> Logout
+              </a>
+              <a  className="btn btn-outline-dark">
+                <i className="fa fa-sign-in" aria-hidden="true"></i> Signup
+              </a>
+              {/* <a href="/login" className="btn btn-outline-dark">
                 <i className="fa fa-sign-in" aria-hidden="true"></i> Login
               </a>
               <a href="/signup" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-user-plus" aria-hidden="true"></i> Sign up
-              </a>
+              </a> */}
               <a onClick={handleShow} className="btn btn-outline-dark ms-2">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> My
                 Cart ({productsCount}) Items
