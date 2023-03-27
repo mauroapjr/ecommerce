@@ -11,7 +11,7 @@ import UserProfile from "./UserProfile";
 
 export default function Navbar() {
   const { user } = useAuth0();
-  console.log("USER",user)
+  console.log("USER", user);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,7 +26,12 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
           <Link to="/" className="navbar-brand">
-            <img src="..\assets\logo_crop.png" alt="" className="store_logo" style={{ width: "180px", height: "auto" }} />
+            <img
+              src="..\assets\logo_crop.png"
+              alt=""
+              className="store_logo"
+              style={{ width: "180px", height: "auto" }}
+            />
           </Link>
           <button
             className="navbar-toggler"
@@ -57,36 +62,28 @@ export default function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="http://storage.googleapis.com/ecommerce-store-project/index.html">Contact</a>
+                <a
+                  className="nav-link"
+                  href="http://storage.googleapis.com/ecommerce-store-project/index.html"
+                >
+                  Contact
+                </a>
               </li>
             </ul>
             <CartProduct show={show} handleClose={handleClose} />
-            <UserProfile />
-            <Login/>
-            <Logout/>
-            <div className="buttons">
-              <a  className="btn btn-outline-dark">
-                <i className="fa fa-sign-in" aria-hidden="true"></i> Login
-              </a>
-              <a  className="btn btn-outline-dark">
-                <i className="fa fa-sign-in" aria-hidden="true"></i> Logout
-              </a>
-              <a  className="btn btn-outline-dark">
-                <i className="fa fa-sign-in" aria-hidden="true"></i> Signup
-              </a>
-              {/* <a href="/login" className="btn btn-outline-dark">
-                <i className="fa fa-sign-in" aria-hidden="true"></i> Login
-              </a>
-              <a href="/signup" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-user-plus" aria-hidden="true"></i> Sign up
-              </a> */}
-              <a onClick={handleShow} className="btn btn-outline-dark ms-2">
+
+            <div className="buttons d-flex">
+              <Login />
+              <Logout />
+
+              <a onClick={handleShow} className="btn btn-outline-dark ms-2 ms=auto">
                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> My
                 Cart ({productsCount}) Items
               </a>
             </div>
           </div>
         </div>
+        <UserProfile />
       </nav>
     </div>
   );

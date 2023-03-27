@@ -1,12 +1,24 @@
 import React from "react";
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Logout() {
   const { logout } = useAuth0();
 
   return (
-    <button onClick={() => logout({ returnTo: window.location.origin })}>Logout</button>
-  )
-} 
+    <div className="buttons">
+      <a className="btn btn-outline-dark ms-2">
+        <i
+          className="fa fa-sign-out"
+          onClick={() => logout({ returnTo: window.location.origin })}
+          aria-hidden="true"
+        ></i>{" "}
+        Logout
+      </a>
+      {/* <button onClick={() => loginWithRedirect()}>Login</button> */}
+
+      {/* <button onClick={() => logout({ returnTo: window.location.origin })}>Logout</button> */}
+    </div>
+  );
+}
 
 export default Logout;
