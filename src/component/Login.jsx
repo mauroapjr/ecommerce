@@ -1,18 +1,24 @@
 import React from "react";
-import { useAuth0 } from '@auth0/auth0-react';
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Login() {
   const { loginWithRedirect } = useAuth0();
 
   return (
     <div className="buttons">
-              <a  className="btn btn-outline-dark ms-2">
-                <i className="fa fa-sign-in" onClick={() => loginWithRedirect()} aria-hidden="true"></i> Login
-              </a>
-    {/* <button onClick={() => loginWithRedirect()}>Login</button> */}
+      {!loginWithRedirect && (
+        <a className="btn btn-outline-dark ms-2">
+          <i
+            className="fa fa-sign-in"
+            onClick={() => loginWithRedirect()}
+            aria-hidden="true"
+          ></i>{" "}
+          Login
+        </a>
+      )}
     </div>
-  )
-} 
+  );
+}
 
 export default Login;
 // import { useRef, useEffect, useState } from "react";
@@ -24,8 +30,7 @@ export default Login;
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // import React from "react";
-// import "../Login.css" 
-
+// import "../Login.css"
 
 // function Login() {
 
@@ -49,7 +54,7 @@ export default Login;
 //   const [matchFocus, setMatchFocus] = useState(false);
 
 //   const [errMsg, setErrMsg] = useState("");
-  
+
 //   useEffect(() => {
 //     userRef.current.focus();
 //   }, []);
@@ -75,7 +80,6 @@ export default Login;
 //   }, [user, pwd, matchPwd]);
 
 //   console.log("VALID NAME", validName);
-
 
 //   const handleSubmit = async (e) => {};
 
