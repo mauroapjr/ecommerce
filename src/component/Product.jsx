@@ -78,7 +78,7 @@ export default function Product() {
                         Add to Cart
                       </button>
           
-          <Link to="/my_cart" className="btn btn-dark px-4 py-2 ms-2">My Cart</Link>
+          
         </div>
         <div>
         <Link to={`/products/${product.id}/tryon`} className="btn btn-dark px-4 py-2 ms-2">Try On</Link>
