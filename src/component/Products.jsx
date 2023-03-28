@@ -106,13 +106,13 @@ export default function Products() {
                   <p className="card-text lead fw-bold ">${product.price}</p>
                   <Link
                     to={`/products/${product.id}`}
-                    className="btn btn-outline-dark "
+                    className="btn btn-outline-dark mt-2"
                     style={{ marginRight: "1px" }}
                   >
                     More Details
                   </Link>
                   <button
-                    className="btn btn-outline-dark mb-7"
+                    className="btn btn-outline-dark mb-7 mt-2"
                     onClick={() => cart.addToCart(product.id)}
                   >
                     Add to Cart

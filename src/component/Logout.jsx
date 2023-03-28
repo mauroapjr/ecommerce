@@ -14,7 +14,7 @@ function Logout() {
         className="btn btn-outline-dark ms-2"
         onClick={() => logout({ returnTo: window.location.origin })}
       >
-        Logout
+        User as a guest
       </button>
     </div>
   );
