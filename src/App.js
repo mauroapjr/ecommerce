@@ -11,6 +11,8 @@ import Login from "./component/Login";
 import SharedCameraLayout from "./SharedCameraLayout";
 import { CartProvider } from "./CartContext";
 
+import SupportAdmin from "./SupportAdmin";
+
 function App() {
   return (
     <CartProvider>
@@ -18,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
+            <Route path="support" element={<SupportAdmin />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:id" element={<Product />} />
             <Route path="about" element={<About />} />

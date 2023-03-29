@@ -1,5 +1,6 @@
 import React from "react";
 import Products from "../component/Products";
+import SupportEngine from "../SupportEngine";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         </div>
       </div>
     <Products/>
+    <SupportEngine />
     </div>
   );
 }
