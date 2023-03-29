@@ -43,7 +43,7 @@ export default function Footer() {
               <li><a style={{fontSize: '0.8rem'}} href="#">Home</a></li>
               <li><a style={{fontSize: '0.8rem'}} href="#">Products</a></li>
               <li><a style={{fontSize: '0.8rem'}} href="#">About</a></li>
-              <li><a style={{fontSize: '0.8rem'}} href="#">Contacts</a></li>
+              <li><a style={{fontSize: '0.8rem'}} href="http://storage.googleapis.com/store_-_locator/index.html">Contacts</a></li>
             </ul>
           </div>
         </div>

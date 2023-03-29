@@ -64,7 +64,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="http://storage.googleapis.com/ecommerce-store-project/index.html"
+                  href='/'
                 >
                   Contact
                 </a>
