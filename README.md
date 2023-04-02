@@ -1,7 +1,7 @@
 
 # Costume ecommerce application
 
-Ecommerce app when users are able to login/logout, browse products, divide them by categories, visualize each product detail, add/remove to cart and search for nearest store. 
+Ecommerce app where users are able to login/logout, browse products, divide them by categories, visualize each product detail, add/remove to cart and search for nearest store. 
 
 ## For this app, we used React, NodeJS, Express, Auth0, and Bootstrap.
 
