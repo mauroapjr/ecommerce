@@ -60,28 +60,26 @@ export default function Product() {
           <h4 className="text-uppercase text-black-50">
             {product.category}
           </h4>
-          <h1 className="display-5 ">
-            {product.title}
-          </h1>
+            <h1 className="display-5 ">
+              {product.title}
+            </h1>
           <p className="lead">
             Rating {product.rating && product.rating.rate}
           </p>
-          <h3 className="display-6 fw-bold my-4">
-            $ {product.price}
-          </h3>
+            <h3 className="display-6 fw-bold my-4">
+              $ {product.price}
+            </h3>
           <p className="lead">{product.description}</p>
           <button 
-                        className="btn btn-outline-dark" 
-                        onClick={() => 
-                          cart.addToCart(product.id)
-                          }>
-                        Add to Cart
-                      </button>
-          
-          
+            className="btn btn-outline-dark" 
+            onClick={() => 
+            cart.addToCart(product.id)
+            }>
+            Add to Cart
+          </button>
         </div>
         <div>
-        <Link to={`/products/${product.id}/tryon`} className="btn btn-dark px-4 py-2 ms-2">Try On</Link>
+          <Link to={`/products/${product.id}/tryon`} className="btn btn-dark px-4 py-2 ms-2">Try On</Link>
         </div>
       </>
     );
